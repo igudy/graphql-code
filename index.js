@@ -1,5 +1,6 @@
 const { ApolloServer } = require("apollo-server");
 const { typeDefs } = require('./schema/type-defs');
+const {resolvers} = require('./schema/resolvers')
 
 // Instantiate a new instance
 const server = new ApolloServer({ typeDefs, resolvers })
