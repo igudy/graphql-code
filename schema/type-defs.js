@@ -6,12 +6,44 @@ const typeDefs = gql`
         name: String!
         username: String!
         age: Int!
-        nationality: String!
+        nationality: Nationality!
+        friends: [User]
+        favouriteMovies: [Movie]
+    }
+    
+    type Movie{
+        id: ID!
+        name: String!
+        yearOfPublication: Int!
+        isInTheaters: Boolean!
     }
 
     type Query{
-    users: [User!]!
+        users: [User!]!
+        user(id: ID!): User!
+        movies: [Movie!]!
+        movie(name: String!): Movie!
+    }
+
+    input CreateUserInput{
+        name: String!
+        username: String!
+        age: Int!
+        nationality: Nationality = BRAZIL
+    }
+
+    type Mutation {
+    createUser(user: CreateUserInput!): User!
+    }
+
+    enum Nationality{
+        USA
+        CANADA
+        AUSTRALIA
+        UK
+        GERMANY
+        SPAIN
     }
 `;
 
-module.exports = {typeDefs} 
+module.exports = {typeDefs}

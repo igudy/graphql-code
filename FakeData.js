@@ -1,74 +1,101 @@
-const UserList = [
+const UserList = [{
+        id: 1,
+        name: 'John Doe',
+        username: 'johndoe',
+        age: 25,
+        nationality: 'USA',
+        friends: [{
+            id: 2,
+            name: 'Jane Smith',
+            username: 'janesmith',
+            age: 30,
+            nationality: 'CANADA'
+        }]
+    },
+    {
+        id: 2,
+        name: 'Jane Smith',
+        username: 'janesmith',
+        age: 30,
+        nationality: 'CANADA'
+    },
+    {
+        id: 3,
+        name: 'Alice Johnson',
+        username: 'alicejohnson',
+        age: 28,
+        nationality: 'AUSTRALIA',
+        friends: [{
+            id: 4,
+            name: 'Bob Williams',
+            username: 'bobwilliams',
+            age: 32,
+            nationality: 'UK'
+        }]
+    },
+    {
+        id: 4,
+        name: 'Bob Williams',
+        username: 'bobwilliams',
+        age: 32,
+        nationality: 'UK'
+    },
+    {
+        id: 5,
+        name: 'Emily Davis',
+        username: 'emilydavis',
+        age: 27,
+        nationality: 'GERMANY',
+        friends: [{
+            id: 6,
+            name: 'Michael Brown',
+            username: 'michaelbrown',
+            age: 35,
+            nationality: 'USA'
+        }]
+    },
+    {
+        id: 6,
+        name: 'Michael Brown',
+        username: 'michaelbrown',
+        age: 35,
+        nationality: 'USA'
+    }
+];
+
+const MovieList = [
   {
     id: 1,
-    name: 'John Doe',
-    username: 'johndoe',
-    age: 25,
-    nationality: 'USA'
+    name: 'Lord of the Rings',
+    yearOfPublication: 2020,
+    isInTheaters: true
   },
   {
     id: 2,
-    name: 'Jane Smith',
-    username: 'janesmith',
-    age: 30,
-    nationality: 'Canada'
+    name: 'Game of Thrones',
+    yearOfPublication: 2018,
+    isInTheaters: false
   },
   {
     id: 3,
-    name: 'Alice Johnson',
-    username: 'alicejohnson',
-    age: 28,
-    nationality: 'Australia'
+    name: 'The Walking Dead',
+    yearOfPublication: 2022,
+    isInTheaters: true
   },
   {
     id: 4,
-    name: 'Bob Williams',
-    username: 'bobwilliams',
-    age: 32,
-    nationality: 'UK'
+    name: 'Batman',
+    yearOfPublication: 2019,
+    isInTheaters: false
   },
   {
     id: 5,
-    name: 'Emily Davis',
-    username: 'emilydavis',
-    age: 27,
-    nationality: 'Germany'
-  },
-  {
-    id: 6,
-    name: 'Michael Brown',
-    username: 'michaelbrown',
-    age: 35,
-    nationality: 'USA'
-  },
-  {
-    id: 7,
-    name: 'Sophia Martinez',
-    username: 'sophiamartinez',
-    age: 29,
-    nationality: 'Spain'
-  },
-  {
-    id: 8,
-    name: 'Daniel Johnson',
-    username: 'danieljohnson',
-    age: 31,
-    nationality: 'Canada'
-  },
-  {
-    id: 9,
-    name: 'Olivia Wilson',
-    username: 'oliviawilson',
-    age: 26,
-    nationality: 'Australia'
-  },
-  {
-    id: 10,
-    name: 'James Anderson',
-    username: 'jamesanderson',
-    age: 33,
-    nationality: 'UK'
+    name: 'The Flash',
+    yearOfPublication: 2021,
+    isInTheaters: true
   }
 ];
 
-module.exports = {UserList};
+module.exports = {
+    UserList, MovieList
+};
