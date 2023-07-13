@@ -1,15 +1,25 @@
 import { useState } from "react"
-import reactLogo from "./assets/react.svg"
-import viteLogo from "/vite.svg"
-import "./App.css"
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+} from "@apollo/client"
+import DisplayData from "./DisplayData"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: "http://localhost:4000/graphql",
+  })
 
   return (
-    <>
-      <div></div>
-    </>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <p>List of users</p>
+        <DisplayData />
+      </div>
+    </ApolloProvider>
   )
 }
 
