@@ -41,8 +41,7 @@ const CREATE_USER_MUTATION = gql`
 const DisplayData = () => {
   const [movieSearched, setMovieSearched] = useState("")
 
-  // Create user states
-  const [name, setName] = useState("")
+  const [name, setName] = useState(" ")
   const [username, setUsername] = useState("")
   const [age, setAge] = useState(0)
   const [nationality, setNationality] = useState("")
@@ -132,7 +131,7 @@ const DisplayData = () => {
 
       {/* Movie data section */}
       {movieData &&
-        movieData.movies.map((movie) => {
+        movieData?.movies?.map((movie) => {
           return <h3>Movie Name: {movie.name}</h3>
         })}
 
